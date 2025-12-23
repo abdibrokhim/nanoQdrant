@@ -13,6 +13,15 @@ A high-performance, lightweight vector database written in Rust, inspired by [Qd
 - 🚀 **REST API** - Full-featured HTTP API
 - ⚡ **In-Memory Storage** - Lightning-fast operations
 
+## Documentation
+
+- **[EMBEDDINGS.md](EMBEDDINGS.md)** - Learn how words and text are converted to vectors (embeddings)
+- **[QUICK_START.md](QUICK_START.md)** - Get started in 5 minutes
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Understand the system architecture
+- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Explore the codebase structure
+
+💡 **New to vector databases?** Start with [EMBEDDINGS.md](EMBEDDINGS.md) to understand how text becomes vectors!
+
 ## Quick Start
 
 ### Installation
@@ -197,6 +206,8 @@ dot_product = Σ(a_i * b_i)
 ```
 
 ## Example: Building a Simple Recommendation System
+
+> **Note**: This example uses pre-computed vectors for simplicity. In real applications, you'll need to generate embeddings from text using machine learning models. See [EMBEDDINGS.md](EMBEDDINGS.md) for a complete guide on converting text to vectors, or run `python examples/embeddings_example.py` for a hands-on demo!
 
 ```python
 import requests
