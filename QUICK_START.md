@@ -101,23 +101,52 @@ python examples/api_client.py
 
 ## Next Steps
 
+- **[Learn about embeddings](EMBEDDINGS.md)** - Understand how to convert text into vectors
+- Run the embeddings example: `python examples/embeddings_example.py`
 - Check out the [README.md](README.md) for full API documentation
 - Explore more examples in the `examples/` directory
 - Build your own recommendation system, search engine, or ML application!
+
+## Understanding Embeddings
+
+The examples above use pre-computed vectors like `[1.0, 2.0, 3.0, 4.0]`. In real applications, you'll need to convert text, images, or other data into these numerical vectors. This process is called **embedding**.
+
+**Quick example with Python:**
+
+```python
+# Install: pip install sentence-transformers
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
+text = "The cat sits on the mat"
+vector = model.encode(text)  # Converts text to 384-dimensional vector
+
+# Now you can store this vector in RustVecDB!
+```
+
+📚 **For a complete guide**, see [EMBEDDINGS.md](EMBEDDINGS.md)
 
 ## Common Use Cases
 
 ### Semantic Search
 Store document embeddings and find similar documents based on meaning.
 
+**Example**: Search "how to fix computer" → finds "repair laptop", "troubleshoot PC"
+
 ### Recommendation Systems
 Store user/item embeddings and recommend similar items.
+
+**Example**: User likes "The Matrix" → recommend "Inception", "Interstellar"
 
 ### Image Search
 Store image embeddings from a vision model and find similar images.
 
+**Example**: Upload a photo → find visually similar images
+
 ### Anomaly Detection
 Store normal data points and detect outliers by finding distant points.
+
+**Example**: Network traffic patterns → detect unusual behavior
 
 ## Troubleshooting
 
@@ -143,6 +172,7 @@ All vectors in a collection must have the same dimension. The dimension is set b
 
 ## Need Help?
 
+- **[Learn about embeddings](EMBEDDINGS.md)** - How to convert text/data to vectors
 - Check the [README.md](README.md) for detailed documentation
 - Look at the examples in `examples/`
 - Open an issue on GitHub
