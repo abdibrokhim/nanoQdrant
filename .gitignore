@@ -3,6 +3,16 @@
 **/*.rs.bk
 Cargo.lock
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
 # IDE
 .idea/
 .vscode/
