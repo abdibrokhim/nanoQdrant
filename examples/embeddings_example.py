@@ -21,6 +21,8 @@ Usage:
 import requests
 from sentence_transformers import SentenceTransformer
 import sys
+from numpy import dot
+from numpy.linalg import norm
 
 # Configuration
 BASE_URL = "http://localhost:6333"
@@ -37,7 +39,7 @@ def check_server():
     try:
         response = requests.get(f"{BASE_URL}/health", timeout=2)
         return response.status_code == 200
-    except:
+    except Exception:
         return False
 
 def main():
@@ -115,9 +117,6 @@ def main():
     word_embeddings = model.encode(test_words)
     
     # Calculate similarity with "cat"
-    from numpy import dot
-    from numpy.linalg import norm
-    
     def cosine_similarity(a, b):
         return dot(a, b) / (norm(a) * norm(b))
     
